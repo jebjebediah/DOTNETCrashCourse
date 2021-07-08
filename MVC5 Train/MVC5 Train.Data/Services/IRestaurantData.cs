@@ -9,5 +9,7 @@ namespace MVC5_Train.Data.Services
    public interface IRestaurantData
    {
       IEnumerable<Restaurant> GetAll();
+
+      Restaurant Get(int id);
    }
 }
