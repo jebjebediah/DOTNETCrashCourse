@@ -11,5 +11,8 @@ namespace MVC5_Train.Data.Services
       IEnumerable<Restaurant> GetAll();
 
       Restaurant Get(int id);
+
+      void Add(Restaurant restaurant);
+      void Update(Restaurant restaurant);
    }
 }
