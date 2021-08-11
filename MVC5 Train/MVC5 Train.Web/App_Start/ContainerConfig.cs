@@ -18,8 +18,9 @@ namespace MVC5_Train.Web
          var builder = new ContainerBuilder();
 
          builder.RegisterControllers(typeof(MvcApplication).Assembly);
-         builder.RegisterType<InMemoryRestaurantData>().As<IRestaurantData>().SingleInstance();
+         builder.RegisterType<SqlRestaurantData>().As<IRestaurantData>().InstancePerRequest();
          builder.RegisterApiControllers(typeof(MvcApplication).Assembly);
+         builder.RegisterType<MVC5DbContext>().InstancePerRequest();
 
          var container = builder.Build();
          DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
